@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:notifications;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+  kafka:
+    bootstrap-servers: ${spring.embedded.kafka.brokers}
+
+app:
+  retry:
+    attempts: 3
+    initial-delay-ms: 200
+    multiplier: 1.0
+    max-delay-ms: 200
